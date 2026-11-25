@@ -17,6 +17,7 @@ router.get("/:id", obtenerPeliculaPorIdWeb);
 
 router.post("/nuevo", crearPeliculaWeb);
 router.post("/eliminar/:id", borrarPeliculaWeb);
+
 // Editar
 router.get("/editar/:id", editarPeliculaWeb);
 router.post("/editar/:id", actualizarPeliculaWeb);

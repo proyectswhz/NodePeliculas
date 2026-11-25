@@ -25,20 +25,14 @@
                 </p>
                 <!-- Acciones -->
                 <div class="detalle-acciones">
-                    <form action="/movies/{{ movie._id }}/favorite" method="POST" style="display:inline;">
-                        <button type="submit" class="btn-fav {% if movie.favorite %}is-favorite{% endif %}">
-                            {% if movie.favorite %}★ Favorita{% else %}☆ Marcar favorita{% endif %}
-                        </button>
-                    </form>
                     <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar película</a>
-                    <form action="/movies/eliminar/{{ movie._id }}" method="POST" style="display:inline;">
+                    <form action="/movies/eliminar/{{ movie._id }}" method="POST">
                         <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">
                             Eliminar
                         </button>
                     </form>
-                </form>
-                <a href="/movies" class="btn-volver">Volver al inicio</a>
+                    <a href="/movies" class="btn-volver">Volver al inicio</a>
+                </div>
             </div>
         </div>
-    </div>
-{% endblock %}
+    {% endblock %}
