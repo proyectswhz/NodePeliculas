@@ -1,4 +1,8 @@
 {% extends "index.njk" %}
+{% block title %}
+    {% if movie._id %}Editar película{% else %}Añadir película{% endif %}
+    - Node Películas
+{% endblock %}
 {% block content %}
     <h1>
         {% if movie._id %}Editar{% else %}Afegir{% endif %}
@@ -6,7 +10,7 @@
     {% if errors.form %}
         <p class="error">{{ errors.form }}</p>
     {% endif %}
-    {# action la decidix el controlador: /movies o /movies/:id. #}
+    {# action la decide el controlador: /movies o /movies/:id #}
     <form action="{{ action }}" method="post">
         <p>
             <label for="title">Títol</label>
@@ -38,7 +42,7 @@
                         </p>
                         <p>
                             <label for="genre">Gèneres, separats per comes</label>
-                            <input id="genre" name="genre" value="{% if movie.genre %}{{ movie.genre }}{% endif %}">
+                            <input id="genre" name="genre" value="{{ movie.genre | default('') }}">
                                 {% if errors.genre %}
                                     <span class="error">{{ errors.genre }}</span>
                                 {% endif %}

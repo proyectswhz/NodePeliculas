@@ -6,7 +6,7 @@
         class="detalle-wrapper">
         <!-- Columna del Póster -->
         <div class="detalle-poster">
-            <img src="{{ movie.poster }}" alt="{{ movie.title }}"></div>
+            <img src="{{ movie.poster }}" alt="{{ movie.title }}" onerror="this.src='https://via.placeholder.com/300x450?text=Sin+Imagen'"></div>
             <!-- Columna de Información -->
             <div class="detalle-info">
                 <h1 class="detalle-titulo">{{ movie.title }}</h1>
@@ -25,13 +25,20 @@
                 </p>
                 <!-- Acciones -->
                 <div class="detalle-acciones">
-                    <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar película</a>
-                    <form action="/movies/borrar/{{ movie._id }}" method="POST" style="display:inline;">
-                        <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">
-                            Eliminar</button>
+                    <form action="/movies/{{ movie._id }}/favorite" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-fav {% if movie.favorite %}is-favorite{% endif %}">
+                            {% if movie.favorite %}★ Favorita{% else %}☆ Marcar favorita{% endif %}
+                        </button>
                     </form>
-                    <a href="/movies" class="btn-volver">Volver al inicio</a>
-                </div>
+                    <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar película</a>
+                    <form action="/movies/eliminar/{{ movie._id }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">
+                            Eliminar
+                        </button>
+                    </form>
+                </form>
+                <a href="/movies" class="btn-volver">Volver al inicio</a>
             </div>
         </div>
-    {% endblock %}
+    </div>
+{% endblock %}

@@ -33,18 +33,27 @@
                                 </h3>
                                 <p class="p-text-h3">
                                     <strong>Año:</strong>
-                                    {{ movie.year }} | {{ movie.duration }} min</p>
+                                    {{ movie.year }} | {{ movie.duration }} min
+                                </p>
                                 <p class="p-text-h3">
                                     <strong>Director:</strong>
-                                    {{ movie.director }}</p>
+                                    {{ movie.director }}
+                                </p>
                                 <p class="p-text-h3">
                                     <strong>Género:</strong>
-                                    {{ movie.genre }}</p>
+                                    {{ movie.genre }}
+                                </p>
                                 <div class="card-actions">
+                                    <form action="/movies/{{ movie._id }}/favorite" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-fav {% if movie.favorite %}is-favorite{% endif %}">
+                                            {% if movie.favorite %}★ Favorita{% else %}☆ Favorita{% endif %}
+                                        </button>
+                                    </form>
                                     <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar</a>
-                                    <form action="/movies/borrar/{{ movie._id }}" method="POST" style="display:inline;">
-                                        <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar la película?')">
-                                        Borrar</button>
+                                    <form action="/movies/eliminar/{{ movie._id }}" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">
+                                            Eliminar
+                                        </button>
                                     </form>
                                 </div>
                             </div>
