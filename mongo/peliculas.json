@@ -1,0 +1,224 @@
+[{
+	"_id": {
+		"$oid": "6aedbd85f1d71ce2188c5a9d"
+	},
+	"title": "Origen",
+	"genre": [
+		"Ciencia ficci├│n",
+		"Acci├│n",
+		"Suspense"
+	],
+	"year": 2010,
+	"duration": 148,
+	"director": "Christopher Nolan",
+	"rate": 8.8,
+	"poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:44:05.752Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:44:05.752Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbdc8f1d71ce2188c5a9e"
+	},
+	"title": "Interstellar",
+	"genre": [
+		"Ciencia ficci├│n",
+		"Drama",
+		"Aventura"
+	],
+	"year": 2014,
+	"duration": 169,
+	"director": "Christopher Nolan",
+	"rate": 8.7,
+	"poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:12.16Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:12.16Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbdcff1d71ce2188c5a9f"
+	},
+	"title": "El Padrino",
+	"genre": [
+		"Crimen",
+		"Drama"
+	],
+	"year": 1972,
+	"duration": 175,
+	"director": "Francis Ford Coppola",
+	"rate": 9.2,
+	"poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:19.907Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:19.907Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbdd6f1d71ce2188c5aa0"
+	},
+	"title": "Pulp Fiction",
+	"genre": [
+		"Crimen",
+		"Drama"
+	],
+	"year": 1994,
+	"duration": 154,
+	"director": "Quentin Tarantino",
+	"rate": 8.9,
+	"poster": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:26.722Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:26.722Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbddcf1d71ce2188c5aa1"
+	},
+	"title": "El Caballero Oscuro",
+	"genre": [
+		"Acci├│n",
+		"Crimen",
+		"Drama"
+	],
+	"year": 2008,
+	"duration": 152,
+	"director": "Christopher Nolan",
+	"rate": 9,
+	"poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:32.879Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:32.879Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbde3f1d71ce2188c5aa2"
+	},
+	"title": "Matrix",
+	"genre": [
+		"Acci├│n",
+		"Ciencia ficci├│n"
+	],
+	"year": 1999,
+	"duration": 136,
+	"director": "Lana Wachowski, Lilly Wachowski",
+	"rate": 8.7,
+	"poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:39.466Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:39.466Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbdeaf1d71ce2188c5aa3"
+	},
+	"title": "Forrest Gump",
+	"genre": [
+		"Drama",
+		"Romance"
+	],
+	"year": 1994,
+	"duration": 142,
+	"director": "Robert Zemeckis",
+	"rate": 8.8,
+	"poster": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:46.323Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:46.323Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbdf0f1d71ce2188c5aa4"
+	},
+	"title": "Cadena perpetua",
+	"genre": [
+		"Drama"
+	],
+	"year": 1994,
+	"duration": 142,
+	"director": "Frank Darabont",
+	"rate": 9.3,
+	"poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:52.862Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:52.862Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6aedbdf7f1d71ce2188c5aa5"
+	},
+	"title": "Gladiator",
+	"genre": [
+		"Acci├│n",
+		"Aventura",
+		"Drama"
+	],
+	"year": 2000,
+	"duration": 155,
+	"director": "Ridley Scott",
+	"rate": 8.5,
+	"poster": "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+	"createdAt": {
+		"$date": "2026-11-06T11:45:59.242Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-06T11:45:59.242Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6afd940a95d175e2734c4f60"
+	},
+	"title": "Star Wars: Episode IV - A New Hope",
+	"genre": [
+		"Sci-Fi",
+		"Action",
+		"Adventure"
+	],
+	"year": 1977,
+	"duration": 121,
+	"director": "George Lucas",
+	"rate": 8.6,
+	"poster": "https://upload.wikimedia.org/wikipedia/en/8/87/Star_Wars_Ep_IV_A_New_Hope_US_poster.jpg",
+	"createdAt": {
+		"$date": "2026-11-18T12:03:22.714Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-18T12:03:22.714Z"
+	},
+	"__v": 0
+}]

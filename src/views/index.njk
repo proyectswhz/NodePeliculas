@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}Node Películas{% endblock %}
+        </title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1 class="card-title">Node Películas</h1>
+                <div class="card-nav">
+                    <a class="btn-nav" href="/movies">Inicio</a>
+                    <a class="btn-nav" href="/movies/nuevo">Crear Película</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+                <!-- Aquí se inyecta el contenido por defecto de la home -->
+                <div class="movies-container">
+                    {% for movie in movies %}
+                        <div class="card">
+                            <div class="card-image-wrapper">
+                                <img src="{{ movie.poster }}" alt="{{ movie.title }}" onerror="this.src='https://via.placeholder.com/300x450?text=Sin+Imagen'">
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title-movies">
+                                    <a class="btn-a" href="/movies/{{ movie._id }}">{{ movie.title }}</a>
+                                </h3>
+                                <p class="p-text-h3">
+                                    <strong>Año:</strong>
+                                    {{ movie.year }} | {{ movie.duration }} min</p>
+                                <p class="p-text-h3">
+                                    <strong>Director:</strong>
+                                    {{ movie.director }}</p>
+                                <p class="p-text-h3">
+                                    <strong>Género:</strong>
+                                    {{ movie.genre }}</p>
+                                <div class="card-actions">
+                                    <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar</a>
+                                    <form action="/movies/borrar/{{ movie._id }}" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar la película?')">
+                                        Borrar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="no-movies">No hay películas disponibles.</p>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </main>
+        <footer>
+            <p>&copy; 2026 - Todos los derechos reservados</p>
+        </footer>
+    </body>
+</html>

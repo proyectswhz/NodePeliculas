@@ -1,0 +1,68 @@
+{% extends "index.njk" %}
+{% block content %}
+    <h1>
+        {% if movie._id %}Editar{% else %}Afegir{% endif %}
+        pel·lícula</h1>
+    {% if errors.form %}
+        <p class="error">{{ errors.form }}</p>
+    {% endif %}
+    {# action la decidix el controlador: /movies o /movies/:id. #}
+    <form action="{{ action }}" method="post">
+        <p>
+            <label for="title">Títol</label>
+            <input id="title" name="title" value="{{ movie.title | default('') }}" required maxlength="200">
+                {% if errors.title %}
+                    <span class="error">{{ errors.title }}</span>
+                {% endif %}
+            </p>
+            <p>
+                <label for="year">Any</label>
+                <input id="year" name="year" type="number" value="{{ movie.year | default('') }}" min="1888" required>
+                    {% if errors.year %}
+                        <span class="error">{{ errors.year }}</span>
+                    {% endif %}
+                </p>
+                <p>
+                    <label for="director">Direcció</label>
+                    <input id="director" name="director" value="{{ movie.director | default('') }}" required maxlength="120">
+                        {% if errors.director %}
+                            <span class="error">{{ errors.director }}</span>
+                        {% endif %}
+                    </p>
+                    <p>
+                        <label for="duration">Duració (minuts)</label>
+                        <input id="duration" name="duration" type="number" value="{{ movie.duration | default('') }}" min="1" required>
+                            {% if errors.duration %}
+                                <span class="error">{{ errors.duration }}</span>
+                            {% endif %}
+                        </p>
+                        <p>
+                            <label for="genre">Gèneres, separats per comes</label>
+                            <input id="genre" name="genre" value="{% if movie.genre %}{{ movie.genre }}{% endif %}">
+                                {% if errors.genre %}
+                                    <span class="error">{{ errors.genre }}</span>
+                                {% endif %}
+                            </p>
+                            <p>
+                                <label for="rate">Puntuació</label>
+                                <input id="rate" name="rate" type="number" value="{{ movie.rate | default(5) }}" min="0" max="10" step="0.1">
+                                    {% if errors.rate %}
+                                        <span class="error">{{ errors.rate }}</span>
+                                    {% endif %}
+                                </p>
+                                <p>
+                                    <label for="poster">URL del Póster</label>
+                                    <input id="poster" name="poster" value="{{ movie.poster | default('') }}" required>
+                                        {% if errors.poster %}
+                                            <span class="error">{{ errors.poster }}</span>
+                                        {% endif %}
+                                    </p>
+                                    <button type="submit">Guardar</button>
+                                </form>
+                            {% endblock %}
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+    </p>

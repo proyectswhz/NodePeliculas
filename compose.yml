@@ -1,0 +1,33 @@
+services:
+  mongo:
+    build: ./mongo
+    image: ghcr.io/joscalbel/peliculas-mongo:1.0
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:?Falta MONGO_USER en .env}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:?Falta MONGO_PASSWORD en .env}
+    volumes:
+      - datos-mongo:/data/db
+    healthcheck:
+      test:
+        ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  app:
+    build: .
+    image: ghcr.io/joscalbel/peliculas-app:1.0
+    restart: unless-stopped
+    environment:
+      MONGO_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongo:27017/NodePeliculas?authSource=admin
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+volumes:
+  datos-mongo:
