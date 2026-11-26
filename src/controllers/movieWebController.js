@@ -2,11 +2,15 @@ import { Movie } from "../models/movieModel.js";
 
 export const obtenerPeliculasWeb = async (req, res) => {
   try {
-    const { genre } = req.query;
+    const { genre, favorite } = req.query;
     let filter = {};
 
     if (genre) {
       filter.genre = { $regex: new RegExp(`^${genre}$`, "i") };
+    }
+
+    if (favorite === "true") {
+      filter.favorite = true;
     }
 
     const movies = await Movie.find(filter).lean();
@@ -173,3 +177,25 @@ export const actualizarPeliculaWeb = async (req, res) => {
 };
 
 // -- Alternar estado de favorito
+export const toggleFavoritoWeb = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const movie = await Movie.findById(id);
+
+    if (!movie) {
+      return res
+        .status(404)
+        .render("error", { message: "Película no encontrada" });
+    }
+
+    movie.favorite = !movie.favorite;
+    await movie.save();
+
+    return res.redirect(req.get("Referer") || "/movies");
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .render("error", { message: "Error al actualizar favorito" });
+  }
+};

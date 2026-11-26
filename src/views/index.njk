@@ -44,6 +44,11 @@
                                     {{ movie.genre | join(", ") }}
                                 </p>
                                 <div class="card-actions">
+                                    <form action="/movies/{{ movie._id }}/favorite" method="POST">
+                                        <button type="submit" class="btn-fav {% if movie.favorite %}is-favorite{% endif %}">
+                                            {% if movie.favorite %}♥ Favorita{% else %}♡ Favorita{% endif %}
+                                        </button>
+                                    </form>
                                     <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar</a>
                                     <form action="/movies/eliminar/{{ movie._id }}" method="POST">
                                         <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">

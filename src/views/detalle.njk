@@ -2,36 +2,41 @@
 {% block title %}
     {{ movie.title }} - Node Películas{% endblock %}
 {% block content %}
-    <div
-        class="detalle-wrapper">
-        <!-- Columna del Póster -->
-        <div class="detalle-poster">
-            <img src="{{ movie.poster }}" alt="{{ movie.title }}" onerror="this.src='https://via.placeholder.com/300x450?text=Sin+Imagen'"></div>
-            <!-- Columna de Información -->
-            <div class="detalle-info">
-                <h1 class="detalle-titulo">{{ movie.title }}</h1>
-                <div class="detalle-meta">
-                    <span class="badge-year">{{ movie.year }}</span>
-                    <span class="badge-duration">{{ movie.duration }} minutos</span>
-                    <span class="badge-rate">⭐ {{ movie.rate }}/10</span>
-                </div>
-                <p class="detalle-row">
-                    <strong>Director:</strong>
-                    <span>{{ movie.director }}</span>
-                </p>
-                <p class="detalle-row">
-                    <strong>Género:</strong>
-                    <span>{{ movie.genre }}</span>
-                </p>
-                <!-- Acciones -->
-                <div class="detalle-acciones">
-                    <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar película</a>
-                    <form action="/movies/eliminar/{{ movie._id }}" method="POST">
-                        <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">
-                            Eliminar
-                        </button>
-                    </form>
-                    <a href="/movies" class="btn-volver">Volver al inicio</a>
+    <div class="detalle-container">
+        <div class="detalle-card">
+            <div class="detalle-poster">
+                <img src="{{ movie.poster }}" alt="{{ movie.title }}" onerror="this.src='https://via.placeholder.com/300x450?text=Sin+Imagen'"></div>
+                <div class="detalle-info">
+                    <h2 class="detalle-titulo">{{ movie.title }}</h2>
+                    <p class="detalle-dato">
+                        <strong>Año:</strong>
+                        {{ movie.year }}</p>
+                    <p class="detalle-dato">
+                        <strong>Duración:</strong>
+                        {{ movie.duration }} min</p>
+                    <p class="detalle-dato">
+                        <strong>Director:</strong>
+                        {{ movie.director }}</p>
+                    <p class="detalle-dato">
+                        <strong>Género:</strong>
+                        {{ movie.genre | join(", ") }}</p>
+                    <p class="detalle-dato">
+                        <strong>Valoración:</strong>
+                        {{ movie.rate }} / 10</p>
+                    <div class="detalle-acciones">
+                        <form action="/movies/{{ movie._id }}/favorite" method="POST">
+                            <button type="submit" class="btn-fav {% if movie.favorite %}is-favorite{% endif %}">
+                                {% if movie.favorite %}♥ Favorita{% else %}♡ Favorita{% endif %}
+                            </button>
+                        </form>
+                        <a href="/movies/editar/{{ movie._id }}" class="btn-editar">Editar película</a>
+                        <form action="/movies/eliminar/{{ movie._id }}" method="POST">
+                            <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de que quieres borrar esta película?')">
+                                Eliminar
+                            </button>
+                        </form>
+                        <a href="/movies" class="btn-volver">Volver al inicio</a>
+                    </div>
                 </div>
             </div>
         </div>

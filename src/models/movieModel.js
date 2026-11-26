@@ -18,6 +18,7 @@ const movieSchema = new Schema(
       required: true,
       match: /^https?:\/\/.+\.(jpg|jpeg|png|webp|avif|gif|svg)$/i,
     },
+    favorite: { type: Boolean, default: false },
   },
   {
     timestamps: true,

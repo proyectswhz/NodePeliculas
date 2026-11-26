@@ -7,6 +7,7 @@ import {
   borrarPeliculaWeb,
   editarPeliculaWeb,
   actualizarPeliculaWeb,
+  toggleFavoritoWeb,
 } from "../controllers/movieWebController.js";
 
 const router = Router();
@@ -17,6 +18,7 @@ router.get("/:id", obtenerPeliculaPorIdWeb);
 
 router.post("/nuevo", crearPeliculaWeb);
 router.post("/eliminar/:id", borrarPeliculaWeb);
+router.post("/:id/favorite", toggleFavoritoWeb);
 
 // Editar
 router.get("/editar/:id", editarPeliculaWeb);
